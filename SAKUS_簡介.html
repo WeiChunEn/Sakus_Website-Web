@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>林家獵場~SAKUS</title>
+    </head>
+    <style>
+         body
+            {
+                 margin: 0; 
+                padding: 0px; 
+                background-color:white;
+            }
+            
+            .header-all
+            {
+                position:absolute;
+                top:0px;
+                width: 100%;
+                height:100px;
+                
+                
+            }
+				
+            .header-img
+            {
+                position:absolute;
+                top: 0px;
+                left:40%;
+                width:20%;
+                height:0px;
+                
+            }
+            .header-img img
+            {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+    
+                margin: auto;
+                max-width: 66%;             
+            }
+            .header-left
+            {
+                position:absolute;
+                top:35px;
+                left:17%;
+                width:25%;
+                height:100px;
+                padding: 10px;
+                
+                
+            }
+            .header-content
+            {
+                width:100%;
+                height:80px;
+                padding:25px;
+                
+                
+                
+                
+            
+            }
+            .header-content ul 
+            {
+                list-style-type:none;
+                margin: 0;
+                padding: 0px;
+                
+            }
+            .first-li
+            {   
+                border-right: 1px;
+                border-right-style: groove;
+            }
+            .header-content li
+            {
+                display:inline;
+                width: 50%;
+              float :left;  
+              font-size: 18px;
+                font-family: 標楷體;
+              color: #000000;
+              line-height: 35px;
+              text-align: center;
+              
+              
+            }
+            .header-content a
+            {
+                text-decoration: none;
+                border-radius: 10px;
+                padding: 10px;
+                color:black;
+                
+               
+            }
+            .header-content a:hover
+            {
+                 background-color: whitesmoke;
+            }
+           
+           .header-right
+            {
+                position:absolute;
+                top:35px;
+                right:17%;
+                width:25%;
+                height:100px;
+                padding:10px;
+                
+                
+            }
+          
+           
+            .left-nav
+            {
+                position: absolute;
+                top: 200px;
+                left:15%;
+                width:20%;
+                height:705px;
+                padding: 20px;
+                padding-top: 5px;
+                padding-left: 60px;
+                padding-right: 60px;
+                background-color: white;
+                
+                
+            }
+            .left-nav-content
+            {
+                width:100%;
+                height:600px;
+               
+            
+            }
+            .left-nav-content ul
+            {
+                list-style-type:none;
+                margin: 0;
+                padding: 0px;
+                
+            
+            }
+            .left-nav-content li
+            {
+              width: 100%;
+              float :left;  
+              font-size: 17px;
+              font-family: Courier New;
+              line-height: 70px;
+              text-align: center;
+              border-bottom: 0.1px ;
+              border-bottom-style:groove;
+            
+            }
+            .left-nav-content a
+            {
+                text-decoration: none;
+                color:black;
+            }
+            .left-nav-content a:hover
+            {
+                color:gray;
+            }
+            .main-content
+            {
+                position:absolute;
+                top:220px;
+                left:35%;
+                width:50%;
+                height:705px;
+				padding: 10px;
+                background-color: white;
+            }
+        *,
+            *::before,
+            *::after 
+            {
+                box-sizing: border-box;
+            }
+
+            .codepad-logo, 
+            .codepad-logo::before, 
+            .codepad-logo::after 
+            {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .codepad-logo 
+            {
+                position: absolute;
+                top:110px;
+                width: 182px;
+                height: 182px;
+                margin: auto;
+                color: black;
+                border-radius: 6px;
+                box-shadow: inset 0 0 0 0.5px black;
+                transform: rotate(90deg);
+            }
+
+            .logo 
+            {
+                background: url("https://i.imgur.com/E20KfCf.png") no-repeat 50%/90%;
+                width: 100%;
+                height: 100%;
+                transform: rotate(270deg);
+            }
+
+        .codepad-logo::before, 
+        .codepad-logo::after 
+        {
+            content: '';
+            z-index: -1;
+            margin: -5%;
+            box-shadow: inset 0 0 0 1px grey;
+            border-radius: 6px;
+            animation: clipIt 8s linear infinite;
+        }
+        .codepad-logo::before 
+            {
+                animation-delay: -4s;
+            }
+
+        @keyframes clipIt 
+            {
+                0%, 100% { clip: rect(0px, 200px, 2px, 0px); }
+                25%      { clip: rect(0px, 2px, 200px, 0px); }
+                50%      { clip: rect(198px, 200px, 200px, 0px); }
+                75%      { clip: rect(0px, 200px, 200px, 198px); }
+        }
+        .accordion 
+        {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active, .accordion:hover 
+        {
+            background-color: #ccc;
+        }
+
+        .accordion:after
+        {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after 
+        {
+            content: "\2212";
+        }
+
+        .panel 
+        {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+		.rwd-left-nav
+		{
+			position:absolute;
+			top:0;
+			left:0;
+			height:40px;
+			width:40px;
+			display: none;
+			
+			
+			
+		}
+		.rwd-right-nav
+		{
+			position:absolute;
+			top:0;
+			right:0;
+			height:40px;
+			width:40px;
+			display: none;
+			
+			
+		}
+		.clickstyle1
+		{
+			width:35px;
+			height: 35px;
+			background-color: whitesmoke;
+			border: none;
+		}
+		.clickstyle2
+		{
+			position: absolute;
+			right:0;
+			width:35px;
+			height: 35px;
+			background-color: whitesmoke;
+			border: none;
+		}
+		.close-style
+		{
+			position:absolute;
+			top:0;
+			height: 30px;
+			width:100%;
+			background-color: white;
+			font-size: 12px;
+			border:none;
+		}
+		.close-style:hover 
+		{
+			
+			background-color: gainsboro;;
+		}
+		.rwd-leftnav-content
+		{
+			position: fixed;
+			top:0;
+			left:0;
+			width:100px;
+			height:480px;
+			display: none;
+			background-color: white;
+			box-shadow: 3px 3px 10px  #cccccc;
+			z-index: 2;
+			
+		}
+		.rwd-leftnav-content ul
+		{
+			position: absolute;
+			top:30px;
+			 list-style-type:none;
+                margin: 0;
+                padding: 0px;
+		}
+		.rwd-leftnav-content li
+		{
+			
+			width: 100%;
+              float :left;  
+              font-size: 12px;
+              font-family: Courier New;
+              line-height: 40px;
+			  padding-top: 5px;
+              text-align: center;
+              
+		}
+		.rwd-leftnav-content li:hover
+		{
+			background-color: gainsboro;
+		}
+		.rwd-leftnav-content a
+         {
+                text-decoration: none;
+                color:black;
+         }
+		
+		.rwd-rightnav-content
+		{
+			position: fixed;
+			top:0;
+			right:0;
+			width:100px;
+			height:210px;
+			display: none;
+			background-color: white;
+			box-shadow: -3px 3px 12px  #cccccc;
+			z-index: 2;
+			
+		}
+		.rwd-rightnav-content ul
+		{
+			position: absolute;
+			top:30px;
+			 list-style-type:none;
+                margin: 0;
+                padding: 0px;
+		}
+		.rwd-rightnav-content li
+		{
+			width: 100%;
+              float :left;  
+              font-size: 12px;
+              font-family: Courier New;
+			  padding-top: 5px;
+              line-height: 40px;
+              text-align: center;
+              
+		}
+		.rwd-rightnav-content li:hover
+		{
+			background-color: gainsboro;
+		}
+		.rwd-rightnav-content a
+         {
+                text-decoration: none;
+                color:black;
+         }
+		 font
+		{
+			position: absolute;
+			left:40%;
+			top:5%;
+			font-family: 標楷體;
+			
+			font-size:28px;
+			line-height: 10px;
+		}
+		list
+		{
+			position:absolute;
+			left:0;
+			top:53%;
+			font-family: 標楷體;
+			
+			font-size:22px;
+			line-height: 40px;
+		}
+		.img-content
+		{
+			position: absolute;
+			top:10%;
+			left:10%;
+			right:10%;
+			width:80%;
+			height:200px;
+			
+		}
+		.imgstyle
+		{
+			width:60%;
+			height:280px;
+		}
+        .space
+        {
+            height:980px;
+        }
+        .col-md-12 p
+        {
+            
+            text-align: center;
+            font-family: 標楷體;
+            
+            
+        }
+        .col-md-12 
+        {
+            z-index: -1;
+        }
+        blockuquote
+        {
+            border-left:none;
+            border-top:2px;
+        }
+		 @media only screen and (max-width : 1300px)
+		 {
+			 .header-left
+			 {
+				 display:none; 
+			 }
+			 .header-right
+			 {
+				 display: none;
+			 }
+			 .left-nav
+			 {
+				 display:none;
+			 }
+			 .main-content
+			 {
+				position:absolute;
+                top:220px;
+                
+				left:10%;
+				 right: 10%;
+                width:80%;
+                height:705px;
+				padding-right: 10%;
+                background-color: white;
+			 }
+			 .rwd-left-nav
+			{
+				position:absolute;
+				top:0;
+				left:0;
+				height:40px;
+				width:40px;
+				display: block;
+			
+			
+			
+			
+			}
+		.rwd-right-nav
+			{
+				position:absolute;
+				top:0;
+				right:0;
+				height:40px;
+				width:40px;
+				display: block;
+			
+			
+			
+			}
+			 font
+			 {
+				 position: absolute;
+				 left:29%;
+				 top:5%;
+				 font-family: 標楷體;
+			
+				 font-size:28px;
+				 line-height: 10px;
+			 }
+			 list
+			 {
+				 position:absolute;
+				 left:0;
+				 top:41%;
+				 font-family: 標楷體;
+			
+				 font-size:22px;
+				 line-height: 40px;
+			 }
+			 .imgstyle
+		{
+			width:100%;
+			height:200px;
+		}
+		}
+       
+        
+    </style>
+    <body>
+        <div class="header-all">
+          <!--<div class = "header-img">
+            <a href = "./" title = "回首頁">
+                <img src = "https://i.imgur.com/37411I0.jpg"
+                     >
+            </a>-->
+            <a href = "SAKUS.html" title = "回首頁">
+            <div class="codepad-logo">
+                <div class="logo"></div>
+            </div>
+            
+            </a>
+            <div class = "header-left">
+                <div class ="header-content">
+                    <ul>
+                        <li class="first-li" ><a href = "https://www.facebook.com/SakusLuYingQu/">FB粉專連結</a></li>
+                        <li><a href = "SAKUS_Index.html">最新公告</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "header-right">
+                <div class = "header-content">
+                    <ul>
+                    <li class="first-li"><a href = "SAKUS_%E8%8C%B6%E8%A8%82%E5%96%AE.html">茶訂購專區</a></li>
+                        <li><a href = "SAKUS_%E7%87%9F%E4%BD%8D%E8%A8%82%E5%96%AE.html">營位訂位</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class = "left-nav">
+            <div class = "left-nav-content">
+                <ul>
+                    <li><a href = "SAKUS_%E7%B0%A1%E4%BB%8B.html">SAKUS簡介</a></li>
+                    <li><a href = "SAKUS_%E6%95%85%E4%BA%8B.html">SAKUS故事</a></li>
+                    <li><a href = "SAKUS_%E9%9C%B2%E7%87%9F%E5%AE%88%E5%89%87.html">SAKUS露營守則</a></li>
+                    <li><a href = "SAKUS_%E7%87%9F%E5%9C%B0%E4%BB%8B%E7%B4%B9.html">SAKUS營區介紹</a></li>
+                    <li><a href = "#價目表">SAKUS營地價目表</a></li>
+                    <li><a href = "#高山茶">SAKUS高山茶</a></li>
+                    
+                    <li><a href = "#蔬果小販">蔬果小販</a></li>
+                    <li><a href = "SAKUS_%E4%BA%A4%E9%80%9A.html">交通路線圖</a></li>
+                    <li><a href = "#周邊景點">周邊景點</a></li>
+                    <li><a href = "#聯絡我們">聯絡我們</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class = "main-content">
+			
+			<font>沙庫斯簡介</font><br>
+			<div class = "img-content">
+			<center><img src="https://i.imgur.com/UNsWA0i.jpg" class="imgstyle" /></center>
+				</div>
+			<list>沙庫斯露營區
+
+				位於南投縣仁愛鄉廬山後花園的
+				馬赫坡步道約4公里處，
+				緊臨莫那魯道紀念碑，是賽德克巴萊的故鄉。
+				園區佔地1.28公頃
+				設有生態農園，種植高麗菜、甜玉米、南瓜、夏南瓜、西瓜、
+				香草植物…等(依季節限定)
+				現在有青椒還有櫛瓜~~~非常好吃
+				此外在露營區週邊也廣植花草樹木，提供旅客露營、品茗服務，帶您深入體驗台灣山林之美。
+			</list>
+        </div>
+		 <div class = "rwd-leftnav-content" id = "leftMenu">
+			<button onclick="closeLeftMenu()" class="close-style" >Close &times; </button>
+			<ul>
+                    <li><a href = "SAKUS_%E7%B0%A1%E4%BB%8B.html">SAKUS簡介</a></li>
+                    <li><a href = "SAKUS_%E6%95%85%E4%BA%8B.html">SAKUS故事</a></li>
+                    <li><a href = "SAKUS_%E9%9C%B2%E7%87%9F%E5%AE%88%E5%89%87.html">SAKUS露營守則</a></li>
+                    <li><a href = "SAKUS_%E7%87%9F%E5%9C%B0%E4%BB%8B%E7%B4%B9.html">SAKUS營區介紹</a></li>
+                    <li><a href = "#價目表">SAKUS營地價目表</a></li>
+                    <li><a href = "#高山茶">SAKUS高山茶</a></li>
+                    
+                    <li><a href = "#蔬果小販">蔬果小販</a></li>
+                    <li><a href = "SAKUS_%E4%BA%A4%E9%80%9A.html">交通路線圖</a></li>
+                    <li><a href = "#周邊景點">周邊景點</a></li>
+                    <li><a href = "#聯絡我們">聯絡我們</a></li>
+                </ul>
+		</div>
+		<div class = "rwd-rightnav-content" id ="rightMenu">
+			<button onclick="closeRightMenu()" class="close-style">Close &times; </button>
+			<ul>
+                    <li><a href = "https://www.facebook.com/SakusLuYingQu/">FB粉專連結</a></li>
+                    <li><a href = "SAKUS_Index.html">最新公告</a></li>
+                    <li><a href = "SAKUS_%E8%8C%B6%E8%A8%82%E5%96%AE.html">茶訂購專區</a></li>
+                    <li><a href = "SAKUS_%E7%87%9F%E4%BD%8D%E8%A8%82%E5%96%AE.html">營位訂位</a></li>
+                   
+                </ul>
+		</div>
+		<div class="rwd-left-nav"><button class="clickstyle1" onclick="openLeftMenu()">&#9776;</button></div>
+		<div class="rwd-right-nav"><button class="clickstyle2" onclick="openRightMenu()">&#9776;</button></div>
+        <div class="container-fluid">
+             
+		<div class="col-md-12">
+			<div class="space"></div>
+            <blockquote>
+				<p>
+					廬山~沙庫斯露營區‧電話：049-2803638‧手機：0911-613026‧地址：南投縣仁愛鄉精英村馬赫坡8號(廬山馬赫坡古戰場旁)
+				</p> 
+                </blockquote>
+			
+		</div>
+	</div>
+		<script>
+function openLeftMenu() {
+    document.getElementById("leftMenu").style.display = "block";
+}
+function closeLeftMenu() {
+    document.getElementById("leftMenu").style.display = "none";
+}
+
+function openRightMenu() {
+    document.getElementById("rightMenu").style.display = "block";
+}
+function closeRightMenu() {
+    document.getElementById("rightMenu").style.display = "none";
+}
+</script>
+    </body>

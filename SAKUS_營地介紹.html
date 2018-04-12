@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>林家獵場~SAKUS</title>
+    </head>
+    <style>
+         body
+            {
+                 margin: 0; 
+                padding: 0px; 
+                background-color:white;
+            }
+            
+            .header-all
+            {
+                position:absolute;
+                top:0px;
+                width: 100%;
+                height:100px;
+                
+                
+            }
+           
+            .header-img
+            {
+                position:absolute;
+                top: 0px;
+                left:40%;
+                width:20%;
+                height:0px;
+                
+            }
+            .header-img img
+            {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+    
+                margin: auto;
+                max-width: 66%;             
+            }
+            .header-left
+            {
+                position:absolute;
+                top:35px;
+                left:17%;
+                width:25%;
+                height:100px;
+                padding: 10px;
+                
+                
+            }
+            .header-content
+            {
+                width:100%;
+                height:80px;
+                padding:25px;
+                
+                
+                
+                
+            
+            }
+            .header-content ul 
+            {
+                list-style-type:none;
+                margin: 0;
+                padding: 0px;
+                
+            }
+            .first-li
+            {   
+                border-right: 1px;
+                border-right-style: groove;
+            }
+            .header-content li
+            {
+                display:inline;
+                width: 50%;
+              float :left;  
+              font-size: 18px;
+                font-family: 標楷體;
+              color: #000000;
+              line-height: 35px;
+              text-align: center;
+              
+              
+            }
+            .header-content a
+            {
+                text-decoration: none;
+                border-radius: 10px;
+                padding: 10px;
+                color:grey;
+                
+               
+            }
+            .header-content a:hover
+            {
+                 background-color: whitesmoke;
+            }
+           
+           .header-right
+            {
+                position:absolute;
+                top:35px;
+                right:17%;
+                width:25%;
+                height:100px;
+                padding:10px;
+                
+                
+            }
+          
+           
+            .left-nav
+            {
+                position: absolute;
+                top: 200px;
+                left:15%;
+                width:20%;
+                height:705px;
+                padding: 20px;
+                padding-top: 5px;
+                padding-left: 60px;
+                padding-right: 60px;
+                background-color: white;
+                
+                
+            }
+            .left-nav-content
+            {
+                width:100%;
+                height:600px;
+               
+            
+            }
+            .left-nav-content ul
+            {
+                list-style-type:none;
+                margin: 0;
+                padding: 0px;
+                
+            
+            }
+            .left-nav-content li
+            {
+              width: 100%;
+              float :left;  
+              font-size: 17px;
+              font-family: Courier New;
+              line-height: 70px;
+              text-align: center;
+              border-bottom: 0.1px ;
+              border-bottom-style:groove;
+            
+            }
+            .left-nav-content a
+            {
+                text-decoration: none;
+                color:grey;
+            }
+            .left-nav-content a:hover
+            {
+                color:black;
+            }
+            
+            .main-content
+            {
+                position:absolute;
+                top:220px;
+                left:38%;
+                left:35%;
+                width:50%;
+                height:705px;
+                background-color: white;
+            }
+              .div_left 
+            {
+                position: absolute;
+                left:30%;
+                width: 320px;
+                height: 68px; 
+                box-sizing: border-box;
+                font-size: 21px;
+                font-family: 標楷體;
+                line-height: 40px;
+                overflow: hidden;
+                border: 1px solid #DDD;
+                padding-top: 14px ;
+		    }
+		    .div_left li 
+            {
+                list-style-type:none;
+                display:inline;
+                padding-right: 20px;
+                
+               
+		     }
+         .div_left ul
+            {
+                padding-left: 25px;
+            }
+            
+            .div_left a
+            {
+                color: grey;
+                text-decoration: none;
+            }
+            .div_left a:hover
+            {
+                
+                color:black;
+            }
+            .div_right 
+            {
+                position: absolute;
+                top:100px;
+                float: left;
+                width: 90%;
+                font-size:18px;
+                
+            }
+            .div_right li a
+            {
+                font-family: 標楷體;
+                color:grey;
+            }
+      .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover
+        {
+            
+        }
+            h3
+            {
+                font-size:25px;
+                font-family: 標楷體;
+            }
+            *,
+            *::before,
+            *::after 
+            {
+                box-sizing: border-box;
+            }
+
+            .codepad-logo, 
+            .codepad-logo::before, 
+            .codepad-logo::after 
+            {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .codepad-logo 
+            {
+                position: absolute;
+                top:110px;
+                width: 182px;
+                height: 182px;
+                margin: auto;
+                color: black;
+                border-radius: 6px;
+                box-shadow: inset 0 0 0 0.5px black;
+                transform: rotate(90deg);
+            }
+
+            .logo 
+            {
+                background: url("https://i.imgur.com/E20KfCf.png") no-repeat 50%/90%;
+                width: 100%;
+                height: 100%;
+                transform: rotate(270deg);
+            }
+
+        .codepad-logo::before, 
+        .codepad-logo::after 
+        {
+            content: '';
+            z-index: -1;
+            margin: -5%;
+            box-shadow: inset 0 0 0 1px grey;
+            border-radius: 6px;
+            animation: clipIt 8s linear infinite;
+        }
+        .codepad-logo::before 
+            {
+                animation-delay: -4s;
+            }
+
+        @keyframes clipIt 
+            {
+                0%, 100% { clip: rect(0px, 200px, 2px, 0px); }
+                25%      { clip: rect(0px, 2px, 200px, 0px); }
+                50%      { clip: rect(198px, 200px, 200px, 0px); }
+                75%      { clip: rect(0px, 200px, 200px, 198px); }
+        }
+        .rwd-left-nav
+		{
+			position:absolute;
+			top:0;
+			left:0;
+			height:40px;
+			width:40px;
+			display: none;
+			
+			
+			
+		}
+		.rwd-right-nav
+		{
+			position:absolute;
+			top:0;
+			right:0;
+			height:40px;
+			width:40px;
+			display: none;
+			
+			
+		}
+		.clickstyle1
+		{
+			width:35px;
+			height: 35px;
+			background-color: whitesmoke;
+			border: none;
+		}
+		.clickstyle2
+		{
+			position: absolute;
+			right:0;
+			width:35px;
+			height: 35px;
+			background-color: whitesmoke;
+			border: none;
+		}
+		.close-style
+		{
+			position:absolute;
+			top:0;
+			height: 30px;
+			width:100%;
+			background-color: white;
+			font-size: 12px;
+			border:none;
+		}
+		.close-style:hover 
+		{
+			
+			background-color: gainsboro;;
+		}
+		.rwd-leftnav-content
+		{
+			position: fixed;
+			top:0;
+			left:0;
+			width:100px;
+			height:480px;
+			display: none;
+			background-color: white;
+			box-shadow: 3px 3px 10px  #cccccc;
+			z-index: 2;
+			
+		}
+		.rwd-leftnav-content ul
+		{
+			position: absolute;
+			top:30px;
+			 list-style-type:none;
+                margin: 0;
+                padding: 0px;
+		}
+		.rwd-leftnav-content li
+		{
+			
+			width: 100%;
+              float :left;  
+              font-size: 12px;
+              font-family: Courier New;
+              line-height: 40px;
+			  padding-top: 5px;
+              text-align: center;
+              
+		}
+		.rwd-leftnav-content li:hover
+		{
+			background-color: gainsboro;
+		}
+		.rwd-leftnav-content a
+         {
+                text-decoration: none;
+                color:black;
+         }
+		
+		.rwd-rightnav-content
+		{
+			position: fixed;
+			top:0;
+			right:0;
+			width:100px;
+			height:210px;
+			display: none;
+			background-color: white;
+			box-shadow: -3px 3px 12px  #cccccc;
+			z-index: 2;
+			
+		}
+		.rwd-rightnav-content ul
+		{
+			position: absolute;
+			top:30px;
+			 list-style-type:none;
+                margin: 0;
+                padding: 0px;
+		}
+		.rwd-rightnav-content li
+		{
+			width: 100%;
+              float :left;  
+              font-size: 12px;
+              font-family: Courier New;
+			  padding-top: 5px;
+              line-height: 40px;
+              text-align: center;
+              
+		}
+		.rwd-rightnav-content li:hover
+		{
+			background-color: gainsboro;
+		}
+		.rwd-rightnav-content a
+         {
+                text-decoration: none;
+                color:black;
+         }
+        .space
+        {
+            
+            height:1280px;
+        }
+        .col-md-12 p
+        {
+            
+            text-align: center;
+              font-family: 標楷體;
+            font-size:18px;
+            
+            
+        }
+        .col-md-12 
+        {
+            z-index: -1;
+        }
+        blockuquote
+        {
+            border-left:none;
+            border-top:2px;
+        }
+         .post  
+            {
+               transition:width 3s;
+               
+                
+            }
+
+            /*轉場的時間*/
+            .post img 
+            {
+                transition: all 0.5s ease 0s;
+                width:60%;
+                height :400px;
+            }
+            
+            /*判斷滑鼠的動作放大圖片還有增加透明度*/
+            .post img:hover 
+            {
+                
+               transform-origin:center;
+                transform: scale(1.8);
+                width:50%;
+               
+                
+                
+               /* transform:translate(-25%,-40%);*/
+               
+                
+                
+               
+            }
+            .main-intro
+        {
+            
+          position: relative;
+                width: 100%;
+                padding: 20px;
+                font-family: 標楷體;
+                color:dimgray;
+                font-size:21px;
+                line-height: 45px;
+            z-index: 0;
+             transition:width 3s;
+        }
+        .main-intro img
+        {
+            width:200px;
+            height:180px;
+             transition: all 0.5s ease 0s;
+        }
+        /* .main-intro img:hover 
+            {
+                
+               transform-origin:center;
+                transform: scale(1.8);
+                width:40%;
+                height:200px;
+               
+                
+                
+                transform:translate(-25%,-40%);
+               
+                
+                
+               
+            }*/
+        
+		@media only screen and (max-width : 1300px)
+		 {
+			 .header-left
+			 {
+				 display:none; 
+			 }
+			 .header-right
+			 {
+				 display: none;
+			 }
+			 .left-nav
+			 {
+				 display:none;
+			 }
+			 .main-content
+			 {
+				position:absolute;
+                top:220px;
+                
+				 left:0;
+				 right: 0;
+				 margin: auto;
+                width:80%;
+                height:705px;
+				padding-right: 10%;
+                background-color: white;
+			 }
+			
+
+
+			  .rwd-left-nav
+			{
+				position:absolute;
+				top:0;
+				left:0;
+				height:40px;
+				width:40px;
+				display: block;
+			
+			
+			
+			
+			}
+		.rwd-right-nav
+			{
+				position:absolute;
+				top:0;
+				right:0;
+				height:40px;
+				width:40px;
+				display: block;
+			
+			
+			
+			}
+              .div_left 
+            {
+                position: absolute;
+                left:0;
+                right: 0;
+                margin: auto;
+                width: 300px;
+                height: 68px; 
+                box-sizing: border-box;
+                font-size: 21px;
+                font-family: 標楷體;
+                line-height: 40px;
+                overflow: hidden;
+                border: 1px solid #DDD;
+                padding-top: 14px ;
+		    }
+              .post img 
+            {
+                transition: all 0.5s ease 0s;
+                width:60%;
+                height :200px;
+            }
+            .space
+             {
+                 height: 1700px;
+             }
+		}
+		
+
+        
+    </style>
+    <body>
+        <div class="header-all">
+            <!--<div class = "header-img">
+            <a href = "./" title = "回首頁">
+                <img src = "https://i.imgur.com/37411I0.jpg"
+                     >
+            </a>-->
+           <a href = "SAKUS.html" title = "回首頁">
+            <div class="codepad-logo">
+                <div class="logo"></div>
+            </div>
+            
+            </a>
+           <div class = "header-left">
+                <div class ="header-content">
+                    <ul>
+                        <li class="first-li" ><a href = "https://www.facebook.com/SakusLuYingQu/">FB粉專連結</a></li>
+                        <li><a href = "SAKUS_Index.html">最新公告</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "header-right">
+                <div class = "header-content">
+                    <ul>
+                    <li class="first-li"><a href = "SAKUS_%E8%8C%B6%E8%A8%82%E5%96%AE.html">茶訂購專區</a></li>
+                        <li><a href = "SAKUS_%E7%87%9F%E4%BD%8D%E8%A8%82%E5%96%AE.html">營位訂位</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class = "left-nav">
+            <div class = "left-nav-content">
+                <ul>
+                    <li><a href = "SAKUS_%E7%B0%A1%E4%BB%8B.html">SAKUS簡介</a></li>
+                    <li><a href = "SAKUS_%E6%95%85%E4%BA%8B.html">SAKUS故事</a></li>
+                    <li><a href = "SAKUS_%E9%9C%B2%E7%87%9F%E5%AE%88%E5%89%87.html">SAKUS露營守則</a></li>
+                    <li><a href = "SAKUS_%E7%87%9F%E5%9C%B0%E4%BB%8B%E7%B4%B9.html">SAKUS營區介紹</a></li>
+                    <li><a href = "#價目表">SAKUS營地價目表</a></li>
+                    <li><a href = "#高山茶">SAKUS高山茶</a></li>
+                    
+                    <li><a href = "#蔬果小販">蔬果小販</a></li>
+                    <li><a href = "SAKUS_%E4%BA%A4%E9%80%9A.html">交通路線圖</a></li>
+                    <li><a href = "#周邊景點">周邊景點</a></li>
+                    <li><a href = "#聯絡我們">聯絡我們</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class = "main-content">
+            <div class ="container">
+                    
+                <div class="div_left">
+                    <ul id="ul">
+                        <li><a href="SAKUS_%E7%87%9F%E5%9C%B0%E4%BB%8B%E7%B4%B9.html">大棚區</a></li>
+                        <li><a href="SAKUS_%E7%87%9F%E5%9C%B0%E4%BB%8B%E7%B4%B92.html">遮雨區</a></li>
+                        <li><a href="SAKUS_%E7%87%9F%E5%9C%B0%E4%BB%8B%E7%B4%B93.html">露天區</a></li>
+                    
+           
+                    </ul>
+                </div>
+                <div class="div_right">
+		
+                    <ul class="nav nav-tabs">
+                         
+                        <li class="active"><a data-toggle="tab" href="#大棚區">大棚區地圖</a></li>
+                        <li><a data-toggle="tab" href="#1">第壹區</a></li>
+			            <li><a data-toggle="tab" href="#3">第參區</a></li>
+                        <li><a data-toggle="tab" href="#5">第伍區</a></li>
+                        <li><a data-toggle="tab" href="#6">第陸區</a></li>
+                        <li><a data-toggle="tab" href="#7">第柒區</a></li>
+                        <li><a data-toggle="tab" href="#8">第捌區</a></li>
+                       
+                    </ul>
+                    <div  class="tab-content">
+                        <div id="大棚區" class="tab-pane fade in active tab">
+                            <h3><center>大棚區地圖</center></h3>
+                        </div>
+                         <div id="1" class="tab-pane fade tab">
+                            <h3><center>第壹區</center></h3>
+                             <div class="post">
+                               <center> <img src = "https://i.imgur.com/YG7299o.jpg"></center>
+                             </div>
+                             <div class="main-intro">
+                                <center>此區價位為3000元</center>
+                                上圖為大棚區第壹區的內部樣式，此區能搭乘兩頂帳篷，並且提供內部泡湯區、洗手抬等必要設施，租借的遊客要注意帳篷須為300*300的樣式，並且一頂帳篷限4人一台車，以下為第壹區的實際內部照片。<br>
+                                 <center>
+                                 <img src = "https://i.imgur.com/zRBF96i.jpg" width = "250px" height="200px">
+                                  <img src = "https://i.imgur.com/NItARIN.jpg" width = "250px" height="200px">
+                                  <img src = "https://i.imgur.com/hVobxY4.jpg" width = "250px" height="200px"></center>
+                             </div>
+                             
+				
+                        </div>
+                        <div id="3" class="tab-pane fade tab">
+                            <h3><center>第參區</center></h3>
+				              
+                             <div class="post">
+                               <center> <img src = "https://i.imgur.com/VcM0IKO.jpg"></center>
+                             </div>
+                             <div class="main-intro">
+                                 <center>此區價位為3000元</center>
+                                上圖為大棚區第參區的內部樣式，此區能搭乘兩頂帳篷，並且提供內部泡湯區、洗手抬等必要設施，租借的遊客要注意帳篷須為300*300的樣式，並且一頂帳篷限4人一台車，以下為第參區的實際內部照片。<br>
+                                 <center>
+                                 <img src = "https://i.imgur.com/QNazzH8.jpg" width = "250px" height="200px">
+                                  <img src = "https://i.imgur.com/wjyiyIu.jpg" width = "250px" height="200px">
+                                  <img src = "https://i.imgur.com/YwwSPxz.jpg" width = "250px" height="200px"></center>
+                             </div>
+                        </div>
+                        <div id="5" class="tab-pane fade tab">
+                            <h3><center>第伍區</center></h3>
+				              
+                             <div class="post">
+                               <center> <img src = "https://i.imgur.com/yzSdSMx.jpg"></center>
+                             </div>
+                              <div class="main-intro">
+                                  <center>此區價位為3000元</center>
+                                上圖為大棚區第伍區的內部樣式，此區能搭乘兩頂帳篷，並且提供內部泡湯區、洗手抬等必要設施，租借的遊客要注意帳篷須為300*300的樣式，並且一頂帳篷限4人一台車，以下為第伍區的實際內部照片。<br>
+                                 <center>
+                                 <img src = "https://i.imgur.com/M5TkKy4.jpg" width = "250px" height="200px">
+                                  <img src = "https://i.imgur.com/uNlpg2M.jpg" width = "250px" height="200px">
+                                  <img src = "https://i.imgur.com/tLbukbq.jpg" width = "250px" height="200px"></center>
+                             </div>
+                        </div>
+                        <div id="6" class="tab-pane fade tab">
+                            <h3><center>第陸區</center></h3>
+                              
+                             <div class="post">
+                               <center> <img src = "https://i.imgur.com/tWU6CTv.jpg"></center>
+                             </div>
+                             <div class="main-intro">
+                                 <center>此區價位為4500元</center>
+                                上圖為大棚區第陸區的內部樣式，此區能搭乘三頂帳篷，並且提供內部泡湯區、洗手抬等必要設施，租借的遊客要注意帳篷須為300*300的樣式，並且一頂帳篷限4人一台車，以下為第陸區的實際內部照片。<br>
+                                 <center>
+                                 <img src = "https://i.imgur.com/inyXHYK.jpg" width = "250px" height="200px">
+                                  <img src = "https://i.imgur.com/ahQHSHR.jpg" width = "250px" height="200px">
+                                  <img src = "https://i.imgur.com/cMZoYdq.jpg" width = "250px" height="200px"></center>
+                             </div>
+                        </div>
+                        <div id="7" class="tab-pane fade tab">
+                            <h3><center>第柒區</center></h3>
+				              
+                             <div class="post">
+                               <center> <img src = "https://i.imgur.com/iX3tA9t.jpg"></center>
+                             </div>
+                            <div class="main-intro">
+                                <center>此區價位為4500元</center>
+                                上圖為大棚區第柒區的內部樣式，此區能搭乘三頂帳篷，並且提供內部泡湯區、洗手抬等必要設施，租借的遊客要注意帳篷須為300*300的樣式，並且一頂帳篷限4人一台車，以下為第柒區的實際內部照片。<br>
+                                 <center>
+                                 <img src = "https://i.imgur.com/yQhpixq.jpg" width = "250px" height="200px">
+                                  <img src = "https://i.imgur.com/tuX0Xsl.jpg" width = "250px" height="200px">
+                                  <img src = "https://i.imgur.com/APTxCoO.jpg" width = "250px" height="200px"></center>
+                             </div>
+                        </div>
+                         <div id="8" class="tab-pane fade tab">
+                            <h3><center>第捌區</center></h3>
+				             
+                             <div class="post">
+                               <center> <img src = "https://i.imgur.com/ysJaEMU.jpg"></center>
+                             </div>
+                            <div class="main-intro">
+                                <center>此區價位為4500元</center>
+                                上圖為大棚區第捌區的內部樣式，此區能搭乘三頂帳篷，並且提供內部泡湯區、洗手抬等必要設施，租借的遊客要注意帳篷須為300*300的樣式，並且一頂帳篷限4人一台車，以下為第捌區的實際內部照片。<br>
+                                 <center>
+                                 <img src = "https://i.imgur.com/kGDHExV.jpg" width = "250px" height="200px">
+                                  <img src = "https://i.imgur.com/wZ5csRp.jpg" width = "250px" height="200px">
+                                  <img src = "https://i.imgur.com/mlBiMVp.jpg" width = "250px" height="200px"></center>
+                             </div>
+                        </div>
+                      
+		
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "rwd-leftnav-content" id = "leftMenu">
+			<button onclick="closeLeftMenu()" class="close-style" >Close &times; </button>
+			<ul>
+                    <li><a href = "SAKUS_%E7%B0%A1%E4%BB%8B.html">SAKUS簡介</a></li>
+                    <li><a href = "SAKUS_%E6%95%85%E4%BA%8B.html">SAKUS故事</a></li>
+                    <li><a href = "SAKUS_%E9%9C%B2%E7%87%9F%E5%AE%88%E5%89%87.html">SAKUS露營守則</a></li>
+                    <li><a href = "SAKUS_%E7%87%9F%E5%9C%B0%E4%BB%8B%E7%B4%B9.html">SAKUS營區介紹</a></li>
+                    <li><a href = "#價目表">SAKUS營地價目表</a></li>
+                    <li><a href = "#高山茶">SAKUS高山茶</a></li>
+                    
+                    <li><a href = "#蔬果小販">蔬果小販</a></li>
+                    <li><a href = "SAKUS_%E4%BA%A4%E9%80%9A.html">交通路線圖</a></li>
+                    <li><a href = "#周邊景點">周邊景點</a></li>
+                    <li><a href = "#聯絡我們">聯絡我們</a></li>
+                </ul>
+		</div>
+		<div class = "rwd-rightnav-content" id ="rightMenu">
+			<button onclick="closeRightMenu()" class="close-style">Close &times; </button>
+			<ul>
+                    <li><a href = "https://www.facebook.com/SakusLuYingQu/">FB粉專連結</a></li>
+                    <li><a href = "SAKUS_Index.html">最新公告</a></li>
+                    <li><a href = "SAKUS_%E8%8C%B6%E8%A8%82%E5%96%AE.html">茶訂購專區</a></li>
+                    <li><a href = "SAKUS_%E7%87%9F%E4%BD%8D%E8%A8%82%E5%96%AE.html">營位訂位</a></li>
+                   
+                </ul>
+		</div>
+		<div class="rwd-left-nav"><button class="clickstyle1" onclick="openLeftMenu()">&#9776;</button></div>
+		<div class="rwd-right-nav"><button class="clickstyle2" onclick="openRightMenu()">&#9776;</button></div>
+        <div class="container-fluid">
+             
+		<div class="col-md-12">
+			<div class="space"></div>
+            <blockquote>
+				<p>
+					廬山~沙庫斯露營區‧電話：049-2803638‧手機：0911-613026‧地址：南投縣仁愛鄉精英村馬赫坡8號(廬山馬赫坡古戰場旁)
+				</p> 
+                </blockquote>
+			
+		</div>
+	</div>
+	
+		<script>
+function openLeftMenu() {
+    document.getElementById("leftMenu").style.display = "block";
+}
+function closeLeftMenu() {
+    document.getElementById("leftMenu").style.display = "none";
+}
+
+function openRightMenu() {
+    document.getElementById("rightMenu").style.display = "block";
+}
+function closeRightMenu() {
+    document.getElementById("rightMenu").style.display = "none";
+}
+</script>
+    </body>

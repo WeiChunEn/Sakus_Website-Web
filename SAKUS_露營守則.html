@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>林家獵場~SAKUS</title>
+    </head>
+    <style>
+         body
+            {
+                 margin: 0; 
+                padding: 0px; 
+                background-color:white;
+            }
+            
+            .header-all
+            {
+                position:absolute;
+                top:0px;
+                width: 100%;
+                height:100px;
+                
+                
+            }
+				
+            .header-img
+            {
+                position:absolute;
+                top: 0px;
+                left:40%;
+                width:20%;
+                height:0px;
+                
+            }
+            .header-img img
+            {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+    
+                margin: auto;
+                max-width: 66%;             
+            }
+            .header-left
+            {
+                position:absolute;
+                top:35px;
+                left:17%;
+                width:25%;
+                height:100px;
+                padding: 10px;
+                
+                
+            }
+            .header-content
+            {
+                width:100%;
+                height:80px;
+                padding:25px;
+                
+                
+                
+                
+            
+            }
+            .header-content ul 
+            {
+                list-style-type:none;
+                margin: 0;
+                padding: 0px;
+                
+            }
+            .first-li
+            {   
+                border-right: 1px;
+                border-right-style: groove;
+            }
+            .header-content li
+            {
+                display:inline;
+                width: 50%;
+              float :left;  
+              font-size: 18px;
+                font-family: 標楷體;
+              color: #000000;
+              line-height: 35px;
+              text-align: center;
+              
+              
+            }
+            .header-content a
+            {
+                text-decoration: none;
+                border-radius: 10px;
+                padding: 10px;
+                color:black;
+                
+               
+            }
+            .header-content a:hover
+            {
+                 background-color: whitesmoke;
+            }
+           
+           .header-right
+            {
+                position:absolute;
+                top:35px;
+                right:17%;
+                width:25%;
+                height:100px;
+                padding:10px;
+                
+                
+            }
+          
+           
+            .left-nav
+            {
+                position: absolute;
+                top: 200px;
+                left:15%;
+                width:20%;
+                height:705px;
+                padding: 20px;
+                padding-top: 5px;
+                padding-left: 60px;
+                padding-right: 60px;
+                background-color: white;
+                
+                
+            }
+            .left-nav-content
+            {
+                width:100%;
+                height:600px;
+               
+            
+            }
+            .left-nav-content ul
+            {
+                list-style-type:none;
+                margin: 0;
+                padding: 0px;
+                
+            
+            }
+            .left-nav-content li
+            {
+              width: 100%;
+              float :left;  
+              font-size: 17px;
+              font-family: Courier New;
+              line-height: 70px;
+              text-align: center;
+              border-bottom: 0.1px ;
+              border-bottom-style:groove;
+            
+            }
+            .left-nav-content a
+            {
+                text-decoration: none;
+                color:black;
+            }
+            .left-nav-content a:hover
+            {
+                color:gray;
+            }
+            .main-content
+            {
+                position:absolute;
+                top:220px;
+                left:35%;
+                width:50%;
+                height:705px;
+				padding: 10px;
+                background-color: white;
+            }
+        *,
+            *::before,
+            *::after 
+            {
+                box-sizing: border-box;
+            }
+
+            .codepad-logo, 
+            .codepad-logo::before, 
+            .codepad-logo::after 
+            {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .codepad-logo 
+            {
+                position: absolute;
+                top:110px;
+                width: 182px;
+                height: 182px;
+                margin: auto;
+                color: black;
+                border-radius: 6px;
+                box-shadow: inset 0 0 0 0.5px black;
+                transform: rotate(90deg);
+            }
+
+            .logo 
+            {
+                background: url("https://i.imgur.com/E20KfCf.png") no-repeat 50%/90%;
+                width: 100%;
+                height: 100%;
+                transform: rotate(270deg);
+            }
+
+        .codepad-logo::before, 
+        .codepad-logo::after 
+        {
+            content: '';
+            z-index: -1;
+            margin: -5%;
+            box-shadow: inset 0 0 0 1px grey;
+            border-radius: 6px;
+            animation: clipIt 8s linear infinite;
+        }
+        .codepad-logo::before 
+            {
+                animation-delay: -4s;
+            }
+
+        @keyframes clipIt 
+            {
+                0%, 100% { clip: rect(0px, 200px, 2px, 0px); }
+                25%      { clip: rect(0px, 2px, 200px, 0px); }
+                50%      { clip: rect(198px, 200px, 200px, 0px); }
+                75%      { clip: rect(0px, 200px, 200px, 198px); }
+        }
+        .accordion 
+        {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active, .accordion:hover 
+        {
+            background-color: #ccc;
+        }
+
+        .accordion:after
+        {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after 
+        {
+            content: "\2212";
+        }
+
+        .panel 
+        {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+		.rwd-left-nav
+		{
+			position:absolute;
+			top:0;
+			left:0;
+			height:40px;
+			width:40px;
+			display: none;
+			
+			
+			
+		}
+		.rwd-right-nav
+		{
+			position:absolute;
+			top:0;
+			right:0;
+			height:40px;
+			width:40px;
+			display: none;
+			
+			
+		}
+		.clickstyle1
+		{
+			width:35px;
+			height: 35px;
+			background-color: whitesmoke;
+			border: none;
+		}
+		.clickstyle2
+		{
+			position: absolute;
+			right:0;
+			width:35px;
+			height: 35px;
+			background-color: whitesmoke;
+			border: none;
+		}
+		.close-style
+		{
+			position:absolute;
+			top:0;
+			height: 30px;
+			width:100%;
+			background-color: white;
+			font-size: 12px;
+			border:none;
+		}
+		.close-style:hover 
+		{
+			
+			background-color: gainsboro;;
+		}
+		.rwd-leftnav-content
+		{
+			position: fixed;
+			top:0;
+			left:0;
+			width:100px;
+			height:480px;
+			display: none;
+			background-color: white;
+			box-shadow: 3px 3px 10px  #cccccc;
+			z-index: 2;
+			
+		}
+		.rwd-leftnav-content ul
+		{
+			position: absolute;
+			top:30px;
+			 list-style-type:none;
+                margin: 0;
+                padding: 0px;
+		}
+		.rwd-leftnav-content li
+		{
+			
+			width: 100%;
+              float :left;  
+              font-size: 12px;
+              font-family: Courier New;
+              line-height: 40px;
+			  padding-top: 5px;
+              text-align: center;
+              
+		}
+		.rwd-leftnav-content li:hover
+		{
+			background-color: gainsboro;
+		}
+		.rwd-leftnav-content a
+         {
+                text-decoration: none;
+                color:black;
+         }
+		
+		.rwd-rightnav-content
+		{
+			position: fixed;
+			top:0;
+			right:0;
+			width:100px;
+			height:210px;
+			display: none;
+			background-color: white;
+			box-shadow: -3px 3px 12px  #cccccc;
+			z-index: 2;
+			
+		}
+		.rwd-rightnav-content ul
+		{
+			position: absolute;
+			top:30px;
+			 list-style-type:none;
+                margin: 0;
+                padding: 0px;
+		}
+		.rwd-rightnav-content li
+		{
+			width: 100%;
+              float :left;  
+              font-size: 12px;
+              font-family: Courier New;
+			  padding-top: 5px;
+              line-height: 40px;
+              text-align: center;
+              
+		}
+		.rwd-rightnav-content li:hover
+		{
+			background-color: gainsboro;
+		}
+		.rwd-rightnav-content a
+         {
+                text-decoration: none;
+                color:black;
+         }
+		 font
+		{
+			position: absolute;
+			left:40%;
+			top:5%;
+			font-family: 標楷體;
+			
+			font-size:28px;
+			line-height: 10px;
+		}
+		list
+		{
+			position:absolute;
+			left:0;
+			top:53%;
+			font-family: 標楷體;
+			
+			font-size:22px;
+			line-height: 40px;
+		}
+		.img-content
+		{
+			position: absolute;
+			top:10%;
+			left:10%;
+			right:10%;
+			width:80%;
+			height:200px;
+			
+		}
+		.imgstyle
+		{
+			width:60%;
+			height:280px;
+		}
+		.main-content ul
+		{
+			position: absolute;
+			top:380px;
+			 list-style-type:none;
+                
+		}
+		.main-content li
+		{
+			font-family: 標楷體;
+			font-size: 18px;
+			line-height: 30px;
+		}
+         .space
+        {
+            height:1600px;
+        }
+        .col-md-12 p
+        {
+            
+            text-align: center;
+            font-family: 標楷體;
+            
+            
+        }
+        .col-md-12 
+        {
+            z-index: -1;
+        }
+        blockuquote
+        {
+            border-left:none;
+            border-top:2px;
+        }
+		 @media only screen and (max-width : 1300px)
+		 {
+			 .header-left
+			 {
+				 display:none; 
+			 }
+			 .header-right
+			 {
+				 display: none;
+			 }
+			 .left-nav
+			 {
+				 display:none;
+			 }
+			 .main-content
+			 {
+				position:absolute;
+                top:220px;
+                
+				left:10%;
+				 right: 10%;
+                width:80%;
+                height:705px;
+				padding-right: 10%;
+                background-color: white;
+			 }
+			 .rwd-left-nav
+			{
+				position:absolute;
+				top:0;
+				left:0;
+				height:40px;
+				width:40px;
+				display: block;
+			
+			
+			
+			
+			}
+		.rwd-right-nav
+			{
+				position:absolute;
+				top:0;
+				right:0;
+				height:40px;
+				width:40px;
+				display: block;
+			
+			
+			
+			}
+			 font
+			 {
+				 position: absolute;
+				 left:16%;
+				 top:5%;
+				 font-family: 標楷體;
+			
+				 font-size:28px;
+				 line-height: 10px;
+			 }
+			 list
+			 {
+				 position:absolute;
+				 left:0;
+				 top:41%;
+				 font-family: 標楷體;
+			
+				 font-size:22px;
+				 line-height: 40px;
+			 }
+			 .imgstyle
+		{
+			width:100%;
+			height:200px;
+		}
+			 .main-content ul
+		{
+			position: absolute;
+			left:-10%;
+			top:300px;
+			 list-style-type:none;
+                
+		}
+              .space
+        {
+            height:2900px;
+        }
+		}
+       
+        
+    </style>
+    <body>
+        <div class="header-all">
+          <!--<div class = "header-img">
+            <a href = "./" title = "回首頁">
+                <img src = "https://i.imgur.com/37411I0.jpg"
+                     >
+            </a>-->
+            <a href = "SAKUS.html" title = "回首頁">
+            <div class="codepad-logo">
+                <div class="logo"></div>
+            </div>
+            
+            </a>
+           <div class = "header-left">
+                <div class ="header-content">
+                    <ul>
+                        <li class="first-li" ><a href = "https://www.facebook.com/SakusLuYingQu/">FB粉專連結</a></li>
+                        <li><a href = "SAKUS_Index.html">最新公告</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "header-right">
+                <div class = "header-content">
+                    <ul>
+                    <li class="first-li"><a href = "SAKUS_%E8%8C%B6%E8%A8%82%E5%96%AE.html">茶訂購專區</a></li>
+                        <li><a href = "SAKUS_%E7%87%9F%E4%BD%8D%E8%A8%82%E5%96%AE.html">營位訂位</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class = "left-nav">
+            <div class = "left-nav-content">
+                <ul>
+                    <li><a href = "SAKUS_%E7%B0%A1%E4%BB%8B.html">SAKUS簡介</a></li>
+                    <li><a href = "SAKUS_%E6%95%85%E4%BA%8B.html">SAKUS故事</a></li>
+                    <li><a href = "SAKUS_%E9%9C%B2%E7%87%9F%E5%AE%88%E5%89%87.html">SAKUS露營守則</a></li>
+                    <li><a href = "SAKUS_%E7%87%9F%E5%9C%B0%E4%BB%8B%E7%B4%B9.html">SAKUS營區介紹</a></li>
+                    <li><a href = "#價目表">SAKUS營地價目表</a></li>
+                    <li><a href = "#高山茶">SAKUS高山茶</a></li>
+                    
+                    <li><a href = "#蔬果小販">蔬果小販</a></li>
+                    <li><a href = "SAKUS_%E4%BA%A4%E9%80%9A.html">交通路線圖</a></li>
+                    <li><a href = "#周邊景點">周邊景點</a></li>
+                    <li><a href = "#聯絡我們">聯絡我們</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class = "main-content">
+			
+			<font>沙庫斯露營守則</font><br>
+			<div class = "img-content">
+			<center><img src="https://i.imgur.com/7JGVlWP.jpg" class="imgstyle" /></center>
+				</div>
+			<ul>
+				<li>1. 即日起 SAKUS露營區採用預約匯款制，前來露營的客人以有先匯款者為先。</li>
+				<li>2. 營區營位進住時間為當日下午二點，拔營時間為次日中午十二點前，
+					請按規定拔營。</li>
+				<li>3. 凡預約露營的營友，需於訂位三日內預付五成訂金。
+
+					三日內未收到訂金，則不保留訂位，且不另行通知。
+
+					訂位後若有延期之需要，請於訂位那一天算起-七天前通知。*同時請電話聯絡：0911–613026手機簡訊或 maill簡訊，回覆確認，方完成訂位手續。</li>
+
+					<li>匯款銀行：中國信託銀行（代號822）-南屯分行  </li>
+
+				<li>帳號：045-540-247-375</li>
+
+				<li>戶名：周淑珍</li>
+
+					<li>E–mail： a950515@yahoo.com.tw</li>
+				<li>4.請適度使用水，並切記勿浪費水資源，如洗手台的水不要一直流，要記得關喔!也請注意，隨手關燈，節能減碳，衛浴設備的燈，也不要忽略到喔。</li>
+				<li>5. 車輛一律停放停車場，一頂帳篷一部車，若一頂帳篷超過一部車請事先告知，謝謝。</li>
+				<li>6. 為維護周遭生態環境，請勿捕捉任何生物或摘取植物。營地植物僅供觀賞用，請勿隨意摘取。這個營地很辛苦的維護~不要隨意或任意摘取，植物也是有生命的阿~</li>
+				<li>7. 攜寵物入園，請小心圈牽，並自行清理您喜愛的寵物的排泄物，以維謢環境清潔。這一點非常重要~自家寵物，不隨意排排泄物喔!!!</li>
+				<li>8. 禁止酗酒、賭博、吸食毒品或其他不正當活動。</li>
+				<li>9. 全區為農地，嚴禁燃放天燈、炮竹…等。</li>
+				<li>10. 為維持營區品質，夜晚21：30後請勿大聲喧嘩；
+					另外，請營友們不要攜帶易造成他人耳膜受損的產品，例如大音響。
+					門禁及車輛進出管制時間為晚上10：00至翌日清晨06：00。
+					若需要進出協助請告知服務人員。</li>
+				<li>11. 請勿窺視或私自進入他人營地範圍，尊重他人，也重視自己。</li>
+				<li>12. 請勿於營地任何地方加刻文字圖樣等。</li>
+				<li>13. 營區用電僅提供照明使用，不可使用高耗電量之電器產品如電磁爐、電熱水壺、電暖爐，再次呼籲，隨手關燈!請遊客自行携帶氣化爐或烤肉架方式煮食。</li>
+				<li>14. 設備損壞者，照價賠償。</li>
+				<li>15. 營區內可以營火、烤肉，請自備材料。</li>
+				<li>16. 拔營之後請自行整理營台，垃圾請攜至規定處並分類置放。</li>
+				<li>17. 露營是公共空間，若有吸菸的營友，請多加自行克制，以免他人吸入您的二手菸，
+					以及菸蒂的困擾，還請菸癮者，勿隨手亂扔，
+
+					能享受大自然的空氣，就盡情地享受大自然的清晰空氣吧!!!
+
+					夏天入園記得帶防曬遮陽傘與防蚊用品。
+					冬天，不熟悉山上溫差溫度的營友們，還請自備保暖物品，外套多帶一件、棉被多帶一條。
+
+				</li>
+				<li>18.沙庫斯露營區一頂營位限四人及一部車，若增加人數及車數請提早告知，並酌收費用。</li>
+				<li>19.凡出租沙庫斯之帳篷者，一律酌收費用500元，出租帳篷於拔營時請告知人員。</li>
+				
+			</ul>
+        </div>
+					 <div class = "rwd-leftnav-content" id = "leftMenu">
+			<button onclick="closeLeftMenu()" class="close-style" >Close &times; </button>
+			<ul>
+                    <li><a href = "SAKUS_%E7%B0%A1%E4%BB%8B.html">SAKUS簡介</a></li>
+                    <li><a href = "SAKUS_%E6%95%85%E4%BA%8B.html">SAKUS故事</a></li>
+                    <li><a href = "SAKUS_%E9%9C%B2%E7%87%9F%E5%AE%88%E5%89%87.html">SAKUS露營守則</a></li>
+                    <li><a href = "SAKUS_%E7%87%9F%E5%9C%B0%E4%BB%8B%E7%B4%B9.html">SAKUS營區介紹</a></li>
+                    <li><a href = "#價目表">SAKUS營地價目表</a></li>
+                    <li><a href = "#高山茶">SAKUS高山茶</a></li>
+                    
+                    <li><a href = "#蔬果小販">蔬果小販</a></li>
+                    <li><a href = "SAKUS_%E4%BA%A4%E9%80%9A.html">交通路線圖</a></li>
+                    <li><a href = "#周邊景點">周邊景點</a></li>
+                    <li><a href = "#聯絡我們">聯絡我們</a></li>
+                </ul>
+		</div>
+		<div class = "rwd-rightnav-content" id ="rightMenu">
+			<button onclick="closeRightMenu()" class="close-style">Close &times; </button>
+			<ul>
+                    <li><a href = "https://www.facebook.com/SakusLuYingQu/">FB粉專連結</a></li>
+                    <li><a href = "SAKUS_Index.html">最新公告</a></li>
+                    <li><a href = "SAKUS_%E8%8C%B6%E8%A8%82%E5%96%AE.html">茶訂購專區</a></li>
+                    <li><a href = "SAKUS_%E7%87%9F%E4%BD%8D%E8%A8%82%E5%96%AE.html">營位訂位</a></li>
+                   
+                </ul>
+		</div>
+		<div class="rwd-left-nav"><button class="clickstyle1" onclick="openLeftMenu()">&#9776;</button></div>
+		<div class="rwd-right-nav"><button class="clickstyle2" onclick="openRightMenu()">&#9776;</button></div>
+        <div class="container-fluid">
+             
+		<div class="col-md-12">
+			<div class="space"></div>
+            <blockquote>
+				<p>
+					廬山~沙庫斯露營區‧電話：049-2803638‧手機：0911-613026‧地址：南投縣仁愛鄉精英村馬赫坡8號(廬山馬赫坡古戰場旁)
+				</p> 
+                </blockquote>
+			
+		</div>
+	</div>
+	
+		<script>
+function openLeftMenu() {
+    document.getElementById("leftMenu").style.display = "block";
+}
+function closeLeftMenu() {
+    document.getElementById("leftMenu").style.display = "none";
+}
+
+function openRightMenu() {
+    document.getElementById("rightMenu").style.display = "block";
+}
+function closeRightMenu() {
+    document.getElementById("rightMenu").style.display = "none";
+}
+</script>
+    </body>
